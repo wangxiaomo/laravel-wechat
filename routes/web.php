@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+    'namespace' => 'Wechat',
+    'prefix'    => 'wechat',
+], function() {
+    Route::any('/', 'WechatController@serve');
 });
