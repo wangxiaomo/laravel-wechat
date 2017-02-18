@@ -22,6 +22,7 @@ Route::group([
 Route::group([
     'namespace' => 'System',
     'prefix'    => 'sys',
+    'middleware' => 'basic_auth',
 ], function() {
     Route::get('/url', 'SystemController@wechat_maps');
     Route::get('/keys', 'SystemController@keys');
