@@ -24,4 +24,5 @@ Route::group([
     'prefix'    => 'sys',
 ], function() {
     Route::get('/url', 'SystemController@wechat_maps');
+    Route::get('/keys', 'SystemController@keys');
 });
