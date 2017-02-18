@@ -15,10 +15,6 @@ class WechatController extends Controller {
         view()->share('js', $this->wechat->js);
     }
 
-    public function test() {
-        dump(redis_get(CacheKey::DEBUG));
-    }
-
     public function serve() {
         return $this->wechat->server->serve();
     }

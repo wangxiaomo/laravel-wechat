@@ -15,8 +15,13 @@ Route::group([
     'namespace' => 'Wechat',
     'prefix'    => 'wechat',
 ], function() {
-    Route::get('/test', 'WechatController@test');
-
     Route::any('/', 'WechatController@serve');
     Route::get('/user', 'WechatController@user');
+});
+
+Route::group([
+    'namespace' => 'System',
+    'prefix'    => 'sys',
+], function() {
+    Route::get('/url', 'SystemController@wechat_maps');
 });
