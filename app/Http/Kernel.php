@@ -57,6 +57,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
-        'wechat' => \App\Http\Middleware\Wechat::class,
+        'wechat' => \App\Http\Middleware\Wechat\Wechat::class,
+        'wechat_snsapi_userinfo'    =>  \App\Http\Middleware\Wechat\WechatUserInfo::class,
     ];
 }

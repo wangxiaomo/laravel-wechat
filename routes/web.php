@@ -15,5 +15,8 @@ Route::group([
     'namespace' => 'Wechat',
     'prefix'    => 'wechat',
 ], function() {
+    Route::get('/test', 'WechatController@test');
+
     Route::any('/', 'WechatController@serve');
+    Route::get('/user', 'WechatController@user');
 });

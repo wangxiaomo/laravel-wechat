@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Wechat;
 
 use Closure;
 
@@ -21,7 +21,7 @@ class Wechat
                 session(['openid' => request('_openid')]);
                 return $next($request);
             }
-            $wechat = app('wechat');
+            $wechat = wechat();
             try{
                 $user = $wechat->oauth->user();
                 session(['openid' => $user->id]);
